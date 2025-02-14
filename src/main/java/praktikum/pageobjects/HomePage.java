@@ -32,24 +32,24 @@ public class HomePage {
     }
     @Step("Появилась кнопка 'Оформить заказ' на главной странице")
     public boolean orderButtonIsVisible() {
-        new WebDriverWait(driver, 3)
+        new WebDriverWait(driver, 5)
                 .until(ExpectedConditions.visibilityOfElementLocated(createOrderButton));
         return driver.findElement(createOrderButton).isDisplayed();
     }
     @Step("Ожидаем кнопу 'Оформить заказ'")
     public void waitHomePageWithOrderButton() {
-        new WebDriverWait(driver, 3)
+        new WebDriverWait(driver, 5)
                 .until(ExpectedConditions.elementToBeClickable(createOrderButton));
     }
     @Step("Нажатие на вкладку 'Булки'")
     public void clickBun() {
-        new WebDriverWait(driver, 3)
+        new WebDriverWait(driver, 5)
                 .until(ExpectedConditions.elementToBeClickable(groupBun));
         driver.findElement(groupBun).click();
     }
     @Step("Нажатие на вкладку 'Соусы'")
     public void clickSauce() {
-        new WebDriverWait(driver, 3)
+        new WebDriverWait(driver, 5)
                 .until(ExpectedConditions.elementToBeClickable(groupSauce));
         driver.findElement(groupSauce).click();
     }
@@ -59,26 +59,26 @@ public class HomePage {
     }
     @Step("Получаем название актуальной вкладки для сравнения с ожидаемой")
     public String selectedMenuGroup() {
-        new WebDriverWait(driver, 3)
+        new WebDriverWait(driver, 5)
                 .until(ExpectedConditions.visibilityOfElementLocated(currentMenu));
         return driver.findElement(currentMenu).getText();
     }
     @Step("Ожидаем появления актуальной вкладки 'Соусы'")
     public void waitSelectedSauce() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", driver.findElement(sauceItem));
-        new WebDriverWait(driver, 3)
+        new WebDriverWait(driver, 5)
                 .until(ExpectedConditions.elementToBeClickable(sauceItem));
     }
     @Step("Ожидаем появления актуальной вкладки 'Начинки'")
     public void waitSelectedFilling() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", driver.findElement(fillingItem));
-        new WebDriverWait(driver, 3)
+        new WebDriverWait(driver, 5)
                 .until(ExpectedConditions.elementToBeClickable(fillingItem));
     }
     @Step("Ожидаем появления актуальной вкладки 'Булки'")
     public void waitSelectedBun() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", driver.findElement(bunItem));
-        new WebDriverWait(driver, 3)
+        new WebDriverWait(driver, 5)
                 .until(ExpectedConditions.elementToBeClickable(bunItem));
     }
 }

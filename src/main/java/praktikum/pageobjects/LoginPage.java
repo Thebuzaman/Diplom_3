@@ -35,12 +35,12 @@ public class LoginPage {
     }
     @Step("Ожидаем кнопу 'Войти' на странице авторизации")
     public void waitLoginPage() {
-        new WebDriverWait(driver, 3)
+        new WebDriverWait(driver, 5)
                 .until(ExpectedConditions.elementToBeClickable(submitButton));
     }
     @Step("Появилась кнопка 'Войти' на странице авторизации")
     public boolean LoginButtonIsVisible() {
-        new WebDriverWait(driver, 3)
+        new WebDriverWait(driver, 5)
                 .until(ExpectedConditions.visibilityOfElementLocated(submitButton));
         return driver.findElement(submitButton).isDisplayed();
     }

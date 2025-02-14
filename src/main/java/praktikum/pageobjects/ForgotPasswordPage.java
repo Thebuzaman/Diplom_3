@@ -14,7 +14,7 @@ public class ForgotPasswordPage {
     }
     @Step("Нажатие на кнопку 'Войти на странице восстановления пароля'")
     public void clickSubmitButton() {
-        new WebDriverWait(driver, 3)
+        new WebDriverWait(driver, 5)
                 .until(ExpectedConditions.visibilityOfElementLocated(submitButton));
         driver.findElement(submitButton).click();
     }

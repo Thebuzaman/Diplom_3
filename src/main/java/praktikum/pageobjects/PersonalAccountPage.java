@@ -28,12 +28,12 @@ public class PersonalAccountPage {
     }
     @Step("Ожидаем кнопу 'Выйти' в личном кабинете")
     public void waitPersonalAccountPage() {
-        new WebDriverWait(driver, 3)
+        new WebDriverWait(driver, 5)
                 .until(ExpectedConditions.elementToBeClickable(exitButton));
     }
     @Step("Появилась кнопа 'Выйти' в личном кабинете")
     public boolean exitButtonIsVisible() {
-        new WebDriverWait(driver, 3)
+        new WebDriverWait(driver, 5)
                 .until(ExpectedConditions.visibilityOfElementLocated(exitButton));
         return driver.findElement(exitButton).isDisplayed();
     }

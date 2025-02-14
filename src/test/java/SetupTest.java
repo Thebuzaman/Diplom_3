@@ -3,26 +3,17 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import praktikum.factory.WebDriverFactory;
 
 public class SetupTest {
     WebDriver driver;
+
     @Before
-    public void setup() {
-        setupChrome();
-//        setupYandex();
+    public void setUp() {
+        driver = WebDriverFactory.getDriverInstance();
     }
     @After
     public void tearDown() {
         driver.quit();
-    }
-
-    public void setupChrome(){
-        WebDriverManager.chromedriver().setup();
-        driver=new ChromeDriver();
-    }
-
-    public void setupYandex(){
-        System.setProperty("webdriver.chrome.driver", "drivers/yandexdriver.exe");
-        driver = new ChromeDriver();
     }
 }
